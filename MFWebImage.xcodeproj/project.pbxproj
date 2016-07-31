@@ -39,6 +39,7 @@
 		8EAB62401D4E448E00DCCF20 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB62281D4E448E00DCCF20 /* UIImageView+HighlightedWebCache.m */; };
 		8EAB62411D4E448E00DCCF20 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB622A1D4E448E00DCCF20 /* UIImageView+WebCache.m */; };
 		8EAB62421D4E448E00DCCF20 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB622C1D4E448E00DCCF20 /* UIView+WebCacheOperation.m */; };
+		8EAB62461D4E50B100DCCF20 /* MFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,8 @@
 		8EAB622A1D4E448E00DCCF20 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		8EAB622B1D4E448E00DCCF20 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		8EAB622C1D4E448E00DCCF20 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		8EAB62441D4E50B100DCCF20 /* MFDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFDownloadManager.h; path = ../MFDownloadManager.h; sourceTree = "<group>"; };
+		8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFDownloadManager.m; path = ../MFDownloadManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,7 @@
 		8EAB61C21D4E3FB700DCCF20 /* MFWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				8EAB62431D4E508700DCCF20 /* MFWebImage */,
 				8EAB61FC1D4E448E00DCCF20 /* ThirdLib */,
 				8EAB61C61D4E3FB700DCCF20 /* AppDelegate.h */,
 				8EAB61C71D4E3FB700DCCF20 /* AppDelegate.m */,
@@ -286,6 +290,15 @@
 				8EAB622C1D4E448E00DCCF20 /* UIView+WebCacheOperation.m */,
 			);
 			path = "SDWebImage(注释)";
+			sourceTree = "<group>";
+		};
+		8EAB62431D4E508700DCCF20 /* MFWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				8EAB62441D4E50B100DCCF20 /* MFDownloadManager.h */,
+				8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */,
+			);
+			path = MFWebImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -418,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EAB62461D4E50B100DCCF20 /* MFDownloadManager.m in Sources */,
 				8EAB623D1D4E448E00DCCF20 /* UIImage+GIF.m in Sources */,
 				8EAB62301D4E448E00DCCF20 /* AFURLRequestSerialization.m in Sources */,
 				8EAB623B1D4E448E00DCCF20 /* SDWebImagePrefetcher.m in Sources */,

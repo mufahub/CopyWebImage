@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "MFAppinfo.h"
 #import "MFAppinfoCell.h"
+#import "MFDownloadManager.h"
 
 @interface ViewController ()
 
@@ -70,22 +71,26 @@
     MFAppinfo *info = self.appinfos[indexPath.row];
     cell.nameLabel.text = info.name;
     cell.downloadLabel.text = info.download;
-    
-    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-//        [NSThread sleepForTimeInterval:4];
-        NSURL *url = [NSURL URLWithString:info.icon];
-        
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        
-        UIImage *image = [UIImage imageWithData:data];
-        
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            
-            cell.iconView.image = image;
-        }];
+//    使用自定义的WebImage加载网络图片
+    [[MFDownloadManager shareManager] downloadWebImageWithUrlString:info.icon completion:^(UIImage *image) {
+        cell.iconView.image = image;
     }];
     
-    [self.queue addOperation:op];
+//    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+////        [NSThread sleepForTimeInterval:4];
+//        NSURL *url = [NSURL URLWithString:info.icon];
+//        
+//        NSData *data = [NSData dataWithContentsOfURL:url];
+//        
+//        UIImage *image = [UIImage imageWithData:data];
+//        
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            
+//            cell.iconView.image = image;
+//        }];
+//    }];
+    
+//    [self.queue addOperation:op];
     
     return cell;
 }
