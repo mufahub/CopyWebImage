@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import "AFNetworking.h"
 #import "MFAppinfo.h"
+#import "MFAppinfoCell.h"
 
 @interface ViewController ()
 
 @property (nonatomic, strong)NSMutableArray *appinfos;
+
+@property (nonatomic, strong)NSOperationQueue *queue;
 
 @end
 
@@ -22,6 +25,7 @@
     [super viewDidLoad];
     
     [self loadData];
+    self.queue = [[NSOperationQueue alloc] init];
 }
 
 
@@ -45,7 +49,7 @@
             [info setValuesForKeysWithDictionary:dict];
             [self.appinfos addObject:info];
         }
-        NSLog(@"%@",self.appinfos);
+//        NSLog(@"%@",self.appinfos);
         
         [self.tableView reloadData];
         
@@ -53,6 +57,37 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"加载失败");
     }];
+}
+
+#pragma mark --UITableView data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.appinfos.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MFAppinfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
+    MFAppinfo *info = self.appinfos[indexPath.row];
+    cell.textLabel.text = info.name;
+    cell.detailTextLabel.text = info.download;
+    
+    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+        
+        NSURL *url = [NSURL URLWithString:info.icon];
+        
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        UIImage *image = [UIImage imageWithData:data];
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            
+            cell.imageView.image = image;
+        }];
+    }];
+    
+    [self.queue addOperation:op];
+    
+    return cell;
 }
 
 @end
