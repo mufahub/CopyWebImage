@@ -7,6 +7,7 @@
 //
 
 #import "MFDownloadManager.h"
+#import "MFOperation.h"
 
 @interface MFDownloadManager ()
 //内存图片缓存
@@ -66,14 +67,15 @@
         NSLog(@"操作已经存在，请稍等");
         return;
     }
-//    如果没有操作，就创建一个操作
-    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        NSURL *url = [NSURL URLWithString:urlString];
+//    创建一个自定义的操作
+    MFOperation *op = [MFOperation operationWithUrlstring:urlString];
+    
+    __weak MFOperation *weakself = op;
+    [op setCompletionBlock:^{
         
-        NSData *data = [NSData dataWithContentsOfURL:url];
+        UIImage *image = weakself.image;
         
-        UIImage *image = [UIImage imageWithData:data];
-        
+        [self.imageCache setObject:image forKey:urlString];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
             [self.operationCache removeObjectForKey:urlString];
@@ -81,10 +83,37 @@
         }];
         
         
-        
     }];
+    
+    
     [self.queue addOperation:op];
     [self.operationCache setObject:op forKey:urlString];
+    NSLog(@"创建一个操作，添到队列中");
+////    如果没有操作，就创建一个自定义的操作
+//    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+//        
+//        [NSThread sleepForTimeInterval:3];
+//        NSURL *url = [NSURL URLWithString:urlString];
+//        
+//        NSData *data = [NSData dataWithContentsOfURL:url];
+//        
+//        NSString *cachePath = [self loadCacheDirectorWithUrlString:urlString];
+//        [data writeToFile:cachePath atomically:YES];
+//
+//        UIImage *image = [UIImage imageWithData:data];
+//        
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            
+//            [self.operationCache removeObjectForKey:urlString];
+//            completion(image);
+//        }];
+//        
+//        
+//        
+//    }];
+//    [self.operationCache setObject:op forKey:urlString];
+//    [self.queue addOperation:op];
+//    NSLog(@"创建一个操作，加入队列中");
     
 }
 

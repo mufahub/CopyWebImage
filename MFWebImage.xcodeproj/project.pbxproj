@@ -40,6 +40,7 @@
 		8EAB62411D4E448E00DCCF20 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB622A1D4E448E00DCCF20 /* UIImageView+WebCache.m */; };
 		8EAB62421D4E448E00DCCF20 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB622C1D4E448E00DCCF20 /* UIView+WebCacheOperation.m */; };
 		8EAB62461D4E50B100DCCF20 /* MFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */; };
+		8EAB62491D4E576500DCCF20 /* MFOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB62481D4E576500DCCF20 /* MFOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,8 @@
 		8EAB622C1D4E448E00DCCF20 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		8EAB62441D4E50B100DCCF20 /* MFDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MFDownloadManager.h; path = ../MFDownloadManager.h; sourceTree = "<group>"; };
 		8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFDownloadManager.m; path = ../MFDownloadManager.m; sourceTree = "<group>"; };
+		8EAB62471D4E576500DCCF20 /* MFOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOperation.h; sourceTree = "<group>"; };
+		8EAB62481D4E576500DCCF20 /* MFOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +300,8 @@
 			children = (
 				8EAB62441D4E50B100DCCF20 /* MFDownloadManager.h */,
 				8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */,
+				8EAB62471D4E576500DCCF20 /* MFOperation.h */,
+				8EAB62481D4E576500DCCF20 /* MFOperation.m */,
 			);
 			path = MFWebImage;
 			sourceTree = "<group>";
@@ -448,6 +453,7 @@
 				8EAB623E1D4E448E00DCCF20 /* UIImage+MultiFormat.m in Sources */,
 				8EAB62411D4E448E00DCCF20 /* UIImageView+WebCache.m in Sources */,
 				8EAB622E1D4E448E00DCCF20 /* AFNetworkReachabilityManager.m in Sources */,
+				8EAB62491D4E576500DCCF20 /* MFOperation.m in Sources */,
 				8EAB62421D4E448E00DCCF20 /* UIView+WebCacheOperation.m in Sources */,
 				8EAB622F1D4E448E00DCCF20 /* AFSecurityPolicy.m in Sources */,
 				8EAB622D1D4E448E00DCCF20 /* AFHTTPSessionManager.m in Sources */,
