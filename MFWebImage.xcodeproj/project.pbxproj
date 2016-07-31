@@ -15,6 +15,8 @@
 		8EAB61D31D4E3FB700DCCF20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EAB61D11D4E3FB700DCCF20 /* LaunchScreen.storyboard */; };
 		8EAB61DE1D4E3FB700DCCF20 /* MFWebImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB61DD1D4E3FB700DCCF20 /* MFWebImageTests.m */; };
 		8EAB61E91D4E3FB700DCCF20 /* MFWebImageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB61E81D4E3FB700DCCF20 /* MFWebImageUITests.m */; };
+		8EAB61F81D4E3FF900DCCF20 /* MFAppinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB61F71D4E3FF900DCCF20 /* MFAppinfo.m */; };
+		8EAB61FB1D4E401400DCCF20 /* MFAppinfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB61FA1D4E401400DCCF20 /* MFAppinfoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		8EAB61E41D4E3FB700DCCF20 /* MFWebImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFWebImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EAB61E81D4E3FB700DCCF20 /* MFWebImageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFWebImageUITests.m; sourceTree = "<group>"; };
 		8EAB61EA1D4E3FB700DCCF20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EAB61F61D4E3FF900DCCF20 /* MFAppinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAppinfo.h; sourceTree = "<group>"; };
+		8EAB61F71D4E3FF900DCCF20 /* MFAppinfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAppinfo.m; sourceTree = "<group>"; };
+		8EAB61F91D4E401400DCCF20 /* MFAppinfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAppinfoCell.h; sourceTree = "<group>"; };
+		8EAB61FA1D4E401400DCCF20 /* MFAppinfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAppinfoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,10 @@
 				8EAB61C71D4E3FB700DCCF20 /* AppDelegate.m */,
 				8EAB61C91D4E3FB700DCCF20 /* ViewController.h */,
 				8EAB61CA1D4E3FB700DCCF20 /* ViewController.m */,
+				8EAB61F91D4E401400DCCF20 /* MFAppinfoCell.h */,
+				8EAB61FA1D4E401400DCCF20 /* MFAppinfoCell.m */,
+				8EAB61F61D4E3FF900DCCF20 /* MFAppinfo.h */,
+				8EAB61F71D4E3FF900DCCF20 /* MFAppinfo.m */,
 				8EAB61CC1D4E3FB700DCCF20 /* Main.storyboard */,
 				8EAB61CF1D4E3FB700DCCF20 /* Assets.xcassets */,
 				8EAB61D11D4E3FB700DCCF20 /* LaunchScreen.storyboard */,
@@ -272,6 +282,8 @@
 			files = (
 				8EAB61CB1D4E3FB700DCCF20 /* ViewController.m in Sources */,
 				8EAB61C81D4E3FB700DCCF20 /* AppDelegate.m in Sources */,
+				8EAB61F81D4E3FF900DCCF20 /* MFAppinfo.m in Sources */,
+				8EAB61FB1D4E401400DCCF20 /* MFAppinfoCell.m in Sources */,
 				8EAB61C51D4E3FB700DCCF20 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

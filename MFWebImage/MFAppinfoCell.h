@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MFAppinfoCell.h
 //  MFWebImage
 //
 //  Created by MF on 16/7/31.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController
-
+@interface MFAppinfoCell : UITableViewCell
 
 @end
-

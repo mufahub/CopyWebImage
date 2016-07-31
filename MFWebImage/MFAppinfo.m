@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  MFAppinfo.m
 //  MFWebImage
 //
 //  Created by MF on 16/7/31.
 //  Copyright © 2016年 MF. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MFAppinfo.h"
 
-@interface ViewController : UITableViewController
-
+@implementation MFAppinfo
 
 @end
-
