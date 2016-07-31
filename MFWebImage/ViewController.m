@@ -75,6 +75,7 @@
 //    使用自定义的WebImage加载网络图片
     
 //    [cell.iconView sd_setImageWithURL:[NSURL URLWithString:info.icon]];
+
     [[MFDownloadManager shareManager] downloadWebImageWithUrlString:info.icon completion:^(UIImage *image) {
         cell.iconView.image = image;
     }];
