@@ -68,11 +68,11 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MFAppinfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellid" forIndexPath:indexPath];
     MFAppinfo *info = self.appinfos[indexPath.row];
-    cell.textLabel.text = info.name;
-    cell.detailTextLabel.text = info.download;
+    cell.nameLabel.text = info.name;
+    cell.downloadLabel.text = info.download;
     
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
-        
+//        [NSThread sleepForTimeInterval:4];
         NSURL *url = [NSURL URLWithString:info.icon];
         
         NSData *data = [NSData dataWithContentsOfURL:url];
@@ -81,7 +81,7 @@
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             
-            cell.imageView.image = image;
+            cell.iconView.image = image;
         }];
     }];
     
