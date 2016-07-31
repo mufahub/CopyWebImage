@@ -32,7 +32,7 @@
 
 -(void)main {
     
-//    [NSThread sleepForTimeInterval:4];
+    [NSThread sleepForTimeInterval:4];
     NSURL *url = [NSURL URLWithString:self.urlString];
     
     NSData *data = [NSData dataWithContentsOfURL:url];

@@ -39,28 +39,32 @@
         self.imageCache = [NSMutableDictionary dictionary];
         self.operationCache = [NSMutableDictionary dictionary];
         self.queue = [[NSOperationQueue alloc] init];
+        
+        
+//        接收内存警告的通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMemoryWarning) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
 }
 //加载网络图片
 - (void)downloadWebImageWithUrlString:(NSString *)urlString completion:(void(^)(UIImage *image))completion {
-//    判断内存中使是否有图片
-    UIImage *cacheImage = self.imageCache[urlString];
-    if (cacheImage != nil) {
-        NSLog(@"从内存中加载");
-        completion(cacheImage);
-        return;
-    }
-//    判断沙盒中是否有图片
-    NSString *cachePath = [self loadCacheDirectorWithUrlString:urlString];
-    cacheImage = [UIImage imageWithContentsOfFile:cachePath];
-    if (cacheImage != nil) {
-        NSLog(@"从沙盒中加载");
-//    图片放入内存中一份
-        [self.imageCache setObject:cacheImage forKey:urlString];
-        completion(cacheImage);
-        return;
-    }
+////    判断内存中使是否有图片
+//    UIImage *cacheImage = self.imageCache[urlString];
+//    if (cacheImage != nil) {
+//        NSLog(@"从内存中加载");
+//        completion(cacheImage);
+//        return;
+//    }
+////    判断沙盒中是否有图片
+//    NSString *cachePath = [self loadCacheDirectorWithUrlString:urlString];
+//    cacheImage = [UIImage imageWithContentsOfFile:cachePath];
+//    if (cacheImage != nil) {
+//        NSLog(@"从沙盒中加载");
+////    图片放入内存中一份
+//        [self.imageCache setObject:cacheImage forKey:urlString];
+//        completion(cacheImage);
+//        return;
+//    }
     
 //    判断是否有操作
     if (self.operationCache[urlString] != nil) {
@@ -118,6 +122,13 @@
 }
 
 
+- (void)didReceiveMemoryWarning {
+    
+    [self.operationCache removeAllObjects];
+    [self.imageCache removeAllObjects];
+    [self.queue cancelAllOperations];
+    
+}
 - (NSString *)loadCacheDirectorWithUrlString:(NSString *)urlString {
 //    获取cache的路径
     NSString *cache = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];

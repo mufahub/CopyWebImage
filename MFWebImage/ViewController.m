@@ -11,6 +11,7 @@
 #import "MFAppinfo.h"
 #import "MFAppinfoCell.h"
 #import "MFDownloadManager.h"
+#import "UIImageView+WebCache.h"
 
 @interface ViewController ()
 
@@ -72,6 +73,8 @@
     cell.nameLabel.text = info.name;
     cell.downloadLabel.text = info.download;
 //    使用自定义的WebImage加载网络图片
+    
+//    [cell.iconView sd_setImageWithURL:[NSURL URLWithString:info.icon]];
     [[MFDownloadManager shareManager] downloadWebImageWithUrlString:info.icon completion:^(UIImage *image) {
         cell.iconView.image = image;
     }];
@@ -91,6 +94,7 @@
 //    }];
     
 //    [self.queue addOperation:op];
+
     
     return cell;
 }
