@@ -39,7 +39,7 @@
     
     NSString *cachePath = [self loadCacheDirectorWithUrlString:self.urlString];
 //    把图片写进沙盒
-//    [data writeToFile:cachePath atomically:YES];
+    [data writeToFile:cachePath atomically:YES];
     UIImage *image = [UIImage imageWithData:data];
     self.image = image;
 
