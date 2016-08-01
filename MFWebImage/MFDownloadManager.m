@@ -8,6 +8,7 @@
 
 #import "MFDownloadManager.h"
 #import "MFOperation.h"
+#import "NSString+Hash.h"
 
 @interface MFDownloadManager ()
 //内存图片缓存
@@ -142,7 +143,7 @@
 //    获取cache的路径
     NSString *cache = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
 //    获取urlString的最后一个路径
-    NSString *path = [urlString lastPathComponent];
+    NSString *path = [urlString cz_md5String];
 //    拼接路径
     NSString *cachePath = [cache stringByAppendingPathComponent:path];
     

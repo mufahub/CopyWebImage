@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E4D98321D4F91AB008B64D3 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E4D98311D4F91AB008B64D3 /* NSString+Hash.m */; };
 		8EAB61C51D4E3FB700DCCF20 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB61C41D4E3FB700DCCF20 /* main.m */; };
 		8EAB61C81D4E3FB700DCCF20 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB61C71D4E3FB700DCCF20 /* AppDelegate.m */; };
 		8EAB61CB1D4E3FB700DCCF20 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB61CA1D4E3FB700DCCF20 /* ViewController.m */; };
@@ -62,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E4D98301D4F91AB008B64D3 /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		8E4D98311D4F91AB008B64D3 /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		8EAB61C01D4E3FB700DCCF20 /* MFWebImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MFWebImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EAB61C41D4E3FB700DCCF20 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8EAB61C61D4E3FB700DCCF20 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 		8EAB62431D4E508700DCCF20 /* MFWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				8E4D98301D4F91AB008B64D3 /* NSString+Hash.h */,
+				8E4D98311D4F91AB008B64D3 /* NSString+Hash.m */,
 				8EAB62441D4E50B100DCCF20 /* MFDownloadManager.h */,
 				8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */,
 				8EAB62471D4E576500DCCF20 /* MFOperation.h */,
@@ -462,6 +467,7 @@
 				8EAB62491D4E576500DCCF20 /* MFOperation.m in Sources */,
 				8EAB62421D4E448E00DCCF20 /* UIView+WebCacheOperation.m in Sources */,
 				8EAB622F1D4E448E00DCCF20 /* AFSecurityPolicy.m in Sources */,
+				8E4D98321D4F91AB008B64D3 /* NSString+Hash.m in Sources */,
 				8EAB622D1D4E448E00DCCF20 /* AFHTTPSessionManager.m in Sources */,
 				8EAB62381D4E448E00DCCF20 /* SDWebImageDownloader.m in Sources */,
 				8EAB62401D4E448E00DCCF20 /* UIImageView+HighlightedWebCache.m in Sources */,
