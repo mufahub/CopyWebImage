@@ -18,4 +18,6 @@
  *  一个对象方法，根据传进来的地址，加载网络图片
  */
 - (void)downloadWebImageWithUrlString:(NSString *)urlString completion:(void(^)(UIImage *image))completion;
+
+- (void)loadOperationWithUrlstring:(NSString *)urlString;
 @end

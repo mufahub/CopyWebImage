@@ -41,6 +41,7 @@
 		8EAB62421D4E448E00DCCF20 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB622C1D4E448E00DCCF20 /* UIView+WebCacheOperation.m */; };
 		8EAB62461D4E50B100DCCF20 /* MFDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */; };
 		8EAB62491D4E576500DCCF20 /* MFOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EAB62481D4E576500DCCF20 /* MFOperation.m */; };
+		8ED964B41D4EF27F00175F78 /* UIImageView+MFWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED964B31D4EF27F00175F78 /* UIImageView+MFWebImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MFDownloadManager.m; path = ../MFDownloadManager.m; sourceTree = "<group>"; };
 		8EAB62471D4E576500DCCF20 /* MFOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOperation.h; sourceTree = "<group>"; };
 		8EAB62481D4E576500DCCF20 /* MFOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFOperation.m; sourceTree = "<group>"; };
+		8ED964B21D4EF27E00175F78 /* UIImageView+MFWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MFWebImage.h"; sourceTree = "<group>"; };
+		8ED964B31D4EF27F00175F78 /* UIImageView+MFWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MFWebImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +305,8 @@
 				8EAB62451D4E50B100DCCF20 /* MFDownloadManager.m */,
 				8EAB62471D4E576500DCCF20 /* MFOperation.h */,
 				8EAB62481D4E576500DCCF20 /* MFOperation.m */,
+				8ED964B21D4EF27E00175F78 /* UIImageView+MFWebImage.h */,
+				8ED964B31D4EF27F00175F78 /* UIImageView+MFWebImage.m */,
 			);
 			path = MFWebImage;
 			sourceTree = "<group>";
@@ -436,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED964B41D4EF27F00175F78 /* UIImageView+MFWebImage.m in Sources */,
 				8EAB62461D4E50B100DCCF20 /* MFDownloadManager.m in Sources */,
 				8EAB623D1D4E448E00DCCF20 /* UIImage+GIF.m in Sources */,
 				8EAB62301D4E448E00DCCF20 /* AFURLRequestSerialization.m in Sources */,
@@ -688,6 +694,7 @@
 				8EAB61EF1D4E3FB700DCCF20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EAB61F01D4E3FB700DCCF20 /* Build configuration list for PBXNativeTarget "MFWebImageTests" */ = {
 			isa = XCConfigurationList;
@@ -696,6 +703,7 @@
 				8EAB61F21D4E3FB700DCCF20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EAB61F31D4E3FB700DCCF20 /* Build configuration list for PBXNativeTarget "MFWebImageUITests" */ = {
 			isa = XCConfigurationList;
@@ -704,6 +712,7 @@
 				8EAB61F51D4E3FB700DCCF20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

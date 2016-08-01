@@ -20,6 +20,14 @@
 
 @implementation MFDownloadManager
 
+- (void)loadOperationWithUrlstring:(NSString *)urlString {
+  NSOperation *op =  self.operationCache[urlString];
+    
+    [op cancel];
+    
+    [self.operationCache removeObjectForKey:urlString];
+}
+
 /**
  *  单例
  */
@@ -31,6 +39,7 @@
     });
     return instance;
 }
+
 - (instancetype)init
 {
     self = [super init];
@@ -39,7 +48,6 @@
         self.imageCache = [NSMutableDictionary dictionary];
         self.operationCache = [NSMutableDictionary dictionary];
         self.queue = [[NSOperationQueue alloc] init];
-        
         
 //        接收内存警告的通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveMemoryWarning) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
@@ -76,6 +84,9 @@
     
     __weak MFOperation *weakself = op;
     [op setCompletionBlock:^{
+        if (weakself.isCancelled) {
+            return ;
+        }
         
         UIImage *image = weakself.image;
         
@@ -85,10 +96,8 @@
             [self.operationCache removeObjectForKey:urlString];
             completion(image);
         }];
-        
-        
+                
     }];
-    
     
     [self.queue addOperation:op];
     [self.operationCache setObject:op forKey:urlString];

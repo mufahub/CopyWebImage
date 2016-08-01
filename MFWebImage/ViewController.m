@@ -12,6 +12,7 @@
 #import "MFAppinfoCell.h"
 #import "MFDownloadManager.h"
 #import "UIImageView+WebCache.h"
+#import "UIImageView+MFWebImage.h"
 
 @interface ViewController ()
 
@@ -30,7 +31,6 @@
     self.queue = [[NSOperationQueue alloc] init];
 }
 
-
 - (NSMutableArray *)appinfos {
     if (!_appinfos) {
         _appinfos = [[NSMutableArray alloc] init];
@@ -39,7 +39,6 @@
 }
 - (void)loadData {
     NSString *str = @"https://raw.githubusercontent.com/yinqiaoyin/SimpleDemo/master/apps.json";
-    
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
@@ -54,7 +53,6 @@
 //        NSLog(@"%@",self.appinfos);
         
         [self.tableView reloadData];
-        
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"加载失败");
@@ -72,13 +70,16 @@
     MFAppinfo *info = self.appinfos[indexPath.row];
     cell.nameLabel.text = info.name;
     cell.downloadLabel.text = info.download;
+    
+    
+    [cell.iconView mf_webImageWithUrlstring:info.icon placeHoldImage:[UIImage new]];
 //    使用自定义的WebImage加载网络图片
     
 //    [cell.iconView sd_setImageWithURL:[NSURL URLWithString:info.icon]];
 
-    [[MFDownloadManager shareManager] downloadWebImageWithUrlString:info.icon completion:^(UIImage *image) {
-        cell.iconView.image = image;
-    }];
+//    [[MFDownloadManager shareManager] downloadWebImageWithUrlString:info.icon completion:^(UIImage *image) {
+//        cell.iconView.image = image;
+//    }];
     
 //    NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
 ////        [NSThread sleepForTimeInterval:4];
@@ -95,7 +96,6 @@
 //    }];
     
 //    [self.queue addOperation:op];
-
     
     return cell;
 }

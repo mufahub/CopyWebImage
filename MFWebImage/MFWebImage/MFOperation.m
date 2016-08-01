@@ -32,7 +32,11 @@
 
 -(void)main {
     
-    [NSThread sleepForTimeInterval:4];
+//    [NSThread sleepForTimeInterval:4];
+    
+    if (self.isCancelled) {
+        return;
+    }
     NSURL *url = [NSURL URLWithString:self.urlString];
     
     NSData *data = [NSData dataWithContentsOfURL:url];
@@ -44,7 +48,6 @@
     self.image = image;
 
 }
-
 //获取沙盒路径
 - (NSString *)loadCacheDirectorWithUrlString:(NSString *)urlString {
     //    获取cache的路径
